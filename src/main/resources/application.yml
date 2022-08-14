@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/psi_project?serverTimezone=UTC
+      username: psi
+      password: psiproject
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  ervlet:
+    multipart:
+      max-file-size: 200MB #单个文件上传大小
+      max-request-size: 600MB #连续上传文件大小
+  jpa:
+    show-sql: true
+
+
+# mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml # mapper映射文件路径
+  type-aliases-package: com.daomain
+
+
+
+
+
+#logging:
+#  level:
+#    com.mapper: info
+
+logging:
+  level:
+    com.mapper: debug
+
+
+# pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+accessPath: /user
